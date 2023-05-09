@@ -23,7 +23,9 @@ jobs:
           echo `pwd`            
           echo `pwd`
           ls -liah
-          scp landing-live ttc-admin@fo889.firecloud.live:/tmp/.
+          scp landing-live.zip ttc-admin@fo889.firecloud.live:/tmp/.
+          c=$(ssh ttc-admin@fo889.firecloud.live 'rm -rf /static/fo69/ll/') || true
+          ssh ttc-admin@fo889.firecloud.live 'unzip /tmp/landing-live.zip -d /static/fo69/ll'
   cms-send-msg:
     runs-on: ubuntu-latest
     needs: build_and_deploy
