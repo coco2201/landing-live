@@ -36,7 +36,7 @@ jobs:
           to: -743606982
           token: 374431260:AAEj6smsnegEmmQc3bjuMWy9edKZnf5VEi0
           message: |
-            ${{ github.actor }} done build for cms
+            ${{ github.actor }} done build for live landing
             Commit message: ${{ github.event.commits[0].message }}
             Repository: ${{ github.repository }}
             live landing updated !! check index page for new feature or bugs fixed
