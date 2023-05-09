@@ -8,7 +8,7 @@ name: Deploy to Firebase Hosting on merge
       - main
 jobs:
   build_and_deploy:
-    runs-on: m1-self-hosted
+    runs-on: self-hosted
     # runs-on: bartholomej/angular-firebase
     steps:
       - name: Check out repository code
