@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+/* Reset
+-------------------------------------------------------------- */
+html {
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, caption, canvas, center, cite, code,
+dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, form, footer, header, hgroup, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, tt, table, tbody, textarea, tfoot, thead, time, tr, th, td, u, ul, var, video {
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    font-style: inherit;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    quotes: none;
+}
+
+figure {
+    margin: 0;
+}
+
+:focus {
+    outline: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+}
+
+legend {
+    white-space: normal;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    max-width: 100%;
+    vertical-align: baseline;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+button,
+input {
+    line-height: normal;
+}
+
+input,
+textarea {
+    background-image: -webkit-linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0));
+    /* Removing the inner shadow, rounded corners on iOS inputs */
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    line-height: 1;
+    cursor: pointer;
+    /* Improves usability and consistency of cursor style between image-type 'input' and others */
+    -webkit-appearance: button;
+    /* Corrects inability to style clickable 'input' types in iOS */
+    border: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    padding: 0;
+    /* Addresses excess padding in IE8/9 */
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    /* Addresses appearance set to searchfield in S5, Chrome */
+}
+
+input[type="search"]::-webkit-search-decoration {
+    /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+    border: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Repeatable Patterns
+-------------------------------------------------------------- */
+body {
+    font: 15px/25px "Roboto Condensed", sans-serif;
+    color: #3D3D41;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+ul, ol {
+    padding: 0;
+}
+
+table {
+    width: 100%;
+}
+
+table tr th,
+table tr td {
+    vertical-align: middle;
+    text-align: left;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+button {
+    border: none;
+}
+
+.container {
+    width: 1140px;
+    max-width: 100%;
+    padding: 0 12px;
+    margin: 0 auto;
+}
+
+@media(max-width: 1140px) {
+    .container {
+        width: 100%;
+    }
+}
+
+#boxed {
+    padding: 109px 0 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.deco {
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.deco span {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(50%);
+    background-size: cover;
+    background-repeat: repeat;
+    animation: anime 0.7s linear forwards;
+}
+
+.deco span.deco01 {
+    background-image: url('/assets/images/deco01.png');
+}
+
+.deco span.deco02 {
+    left: 235px;
+    background-image: url('/assets/images/deco02.png');
+    animation-delay: 0.4s;
+}
+
+@keyframes anime {
+    0% {
+        opacity: 0;
+        transform: translateX(70%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+/* Header
+-------------------------------------------------------------- */
+#header {
+    text-align: center;
+}
+
+#header h1 {
+    margin-bottom: 26px;
+}
+
+#header h4 {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 34px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #EE2A7B;
+    margin-bottom: 15px;
+}
+
+#header p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+#logo {
+    text-align: center;
+}
+
+/* Main Content
+-------------------------------------------------------------- */
+#main_content {
+    margin: 70px 0 72px;
+}
+
+#section01 .list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#section01 .list li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 40px 20px 36px;
+    width: 252px;
+    height: 242px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#section01 .list li a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('/assets/images/deco.png');
+    background-size: cover;
+    width: 112px;
+    height: 62px;
+    transition: 0.3s;
+}
+
+#section01 .list li a:hover:before {
+    width: 122px;
+    height: 68px;
+}
+
+#section01 .list li a:hover {
+    background-color: #A921FD;
+}
+
+#section01 .list li a:hover .txt {
+    color: #fff;
+}
+
+#section01 .list li a .logo_mannhan {
+    max-width: 192px;
+}
+
+#section01 .list li a .txt {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #3D3D41;
+    margin-top: 16px;
+    transition: 0.3s;
+}
+
+#section01 .list li a .more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #51B025;
+    border-radius: 2px;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 38px;
+    padding: 9px 25px;
+    border-radius: 8px;
+}
+
+/* Footer
+-------------------------------------------------------------- */
+#footer {
+    text-align: center;
+}
+
+#footer .about_us {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+@media (max-width: 1140px) {
+    #boxed {
+        padding: 60px 0;
+    }
+
+    #main_content {
+        margin: 50px 0 50px;
+    }
+
+    #section01 .list li {
+        width: 50%;
+    }
+
+    #section01 .list li:nth-child(n+3) {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    #boxed {
+        padding: 40px 0;
+    }
+
+    #section01 .list li {
+        width: 100%;
+    }
+
+    #section01 .list li:nth-child(n+2) {
+        margin-top: 30px;
+    }
+
+    #footer .about_us {
+        font-size: 16px;
+    }
+}
+
+.marquee {
+    flex: 1;
+    background-color: #ee2a7b;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 20px;
+    padding: 7px 3px;
+}
+
+.marquee a{
+    color: blue;
+    font-weight: bold;
+}
+.js-marquee {
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
