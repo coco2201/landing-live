@@ -9,7 +9,6 @@ name: Deploy to Firebase Hosting on merge
 jobs:
   build_and_deploy:
     runs-on: self-hosted
-    # runs-on: bartholomej/angular-firebase
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
