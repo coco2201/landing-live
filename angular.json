@@ -99,6 +99,97 @@
           }
         }
       }
+    },
+    "policy-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/policy-app",
+      "sourceRoot": "projects/policy-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/policy-app",
+            "index": "projects/policy-app/src/index.html",
+            "main": "projects/policy-app/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/policy-app/tsconfig.app.json",
+            "assets": [
+              "projects/policy-app/src/favicon.ico",
+              "projects/policy-app/src/assets"
+            ],
+            "styles": [
+              "projects/policy-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "policy-app:build:production"
+            },
+            "development": {
+              "browserTarget": "policy-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "policy-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/policy-app/tsconfig.spec.json",
+            "assets": [
+              "projects/policy-app/src/favicon.ico",
+              "projects/policy-app/src/assets"
+            ],
+            "styles": [
+              "projects/policy-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "cli": {

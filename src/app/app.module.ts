@@ -3,14 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
+import {CommonLayoutComponent} from "./layouts/common-layout/common-layout.component";
+import {RouterModule} from "@angular/router";
+import { ContactComponent } from './pages/contact/contact/contact.component';
+import {AppRoutingModule} from "./app.routing";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent
+    ListComponent,
+    CommonLayoutComponent,
+    ContactComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
